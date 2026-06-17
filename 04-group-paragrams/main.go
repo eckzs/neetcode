@@ -1,38 +1,49 @@
 package main
 
+import (
+	"fmt"
+	"slices"
+)
+
 func groupAnagrams(strs []string) [][]string {
-	// check is anagram
-	newGroup := make([]string, 0)
-	groups := make([][]string, 0)
-	groupStrBySize := make(map[int]map[rune]int)
-	// check by len of string
-	for i := 0; i <= len(strs); i++ {
-		// append new str , then next check match if donset append to its own group
-		// if _, ok := groupStrBySize[len(str)]; ok {
-		// 		//here the len based
-		// 	}
-		current, next := strs[i], strs[i+1]
-		if len(strs[i]) != len(strs[i+1]) {
+	// my idea: iterar por cada palabra, crear su mapa, y luego interara comparando cantidades iguales por palabra
+	// groups := make([][]string)
+	// kind := make(map[rune]int)
+
+	set := make(map[string][]int)
+	for idx, str := range strs {
+		r := []rune(str)
+		slices.Sort(r)
+		
+		fmt.Printf("idx: %d , str: %s , sorted: %v\n", idx, str, string(r)
+		if _, ok := set[string(r)]; ok {
+			set[string(r)] = append(set[string(r)], idx)
 		}
 	}
+	fmt.Println(set)
 
-	// group
+	//save the orderd set[abc] = idx
+
+	// for idx, str := range strs {
+	// 	set := make(map[rune]int)
+	// }
+	// kinda whta words have
+
+	// append
+	//group by len?
+
+	// we collect the position
+
+	// for idx, str := range strs {
+	// 	strSlice := strings.Split(str, "")
+	// 	sort.Strings(strSlice)
+	// 	fmt.Println(idx, strSlice)
+	// }
+
 	return [][]string{}
 }
 
-// counter := make(map[rune]int8)
-//
-//	for i, ch := range s {
-//		counter[ch]++
-//		counter[rune(t[i])]--
-//	}
-//
-//	for _, v := range counter {
-//		if v != 0 {
-//			return false
-//		}
-//	}
-//
-// return true
 func main() {
+	ex1 := []string{"act", "pots", "tops", "cat", "stop", "hat"}
+	groupAnagrams(ex1)
 }
