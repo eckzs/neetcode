@@ -14,10 +14,10 @@ func groupAnagrams(strs []string) [][]string {
 	for idx, str := range strs {
 		r := []rune(str)
 		slices.Sort(r)
-		
-		fmt.Printf("idx: %d , str: %s , sorted: %v\n", idx, str, string(r)
-		if _, ok := set[string(r)]; ok {
-			set[string(r)] = append(set[string(r)], idx)
+		sortedWord := string(r)
+		fmt.Printf("idx: %d , str: %s , sorted: %v\n", idx, str, sortedWord)
+		if val, ok := set[sortedWord]; ok {
+			set[sortedWord] = append(val, 1)
 		}
 	}
 	fmt.Println(set)
