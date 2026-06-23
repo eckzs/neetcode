@@ -24,7 +24,11 @@ class Solution {
             if (area > maxArea){
                 maxArea = area;
             }
-            left++;
+            if (heights[left] < heights[right]) {
+                left++;
+            } else {
+                right--;
+            }
         }
         return maxArea;
     }
