@@ -18,11 +18,11 @@ class Solution:
             i = start + length
         return res
 
-# usage
-strs=["",""]
-s = Solution()
-encoded = s.encode(strs)
-decoded = s.decode(encoded)
+if __name__ == "__main__":
+    strs = ["", ""]
+    s = Solution()
+    encoded = s.encode(strs)
+    decoded = s.decode(encoded)
 
-print(encoded)
-print(decoded)
+    print(encoded)
+    print(decoded)

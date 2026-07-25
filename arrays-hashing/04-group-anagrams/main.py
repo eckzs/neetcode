@@ -1,9 +1,7 @@
 from collections import defaultdict
 
 
-strs = ["act","pots","tops","cat","stop","hat"]
-
-def group_anagrams(strs: list[int]) -> list[list[int]]:
+def group_anagrams(strs: list[str]) -> list[list[str]]:
     anagram_groups = defaultdict(list)
     # {abc: [0, 4, 5]}
     for stri in strs:
@@ -12,6 +10,8 @@ def group_anagrams(strs: list[int]) -> list[list[int]]:
 
     return list(anagram_groups.values())
 
-# Output: [["hat"],["act", "cat"],["stop", "pots", "tops"]]
 
-print(group_anagrams(strs))
+if __name__ == "__main__":
+    strs = ["act", "pots", "tops", "cat", "stop", "hat"]
+    # Output: [["hat"],["act", "cat"],["stop", "pots", "tops"]]
+    print(group_anagrams(strs))

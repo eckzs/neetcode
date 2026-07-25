@@ -9,8 +9,9 @@ class Solution:
             output.append(delta_x)
         return output
 
-nums = [1,2,4,6]
-            
-# Output: [48,24,12,8]        
-s = Solution()
-s.productExceptSelf(nums)
+if __name__ == "__main__":
+    nums = [1, 2, 4, 6]
+
+    # Output: [48,24,12,8]
+    s = Solution()
+    print(s.productExceptSelf(nums))

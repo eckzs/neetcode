@@ -17,10 +17,12 @@ class Solution:
         return max(longest, tmp)
 
 
-        
-nums = [2,20,4,10,3,4,5]
-case2 = [0,3,2,5,4,6,1,1]
-# 2, 3, 4, 4, 5, 10, 20
-s = Solution()
-print(s.longestConsecutive(case2))
-# Output: 4
+
+if __name__ == "__main__":
+    nums = [2, 20, 4, 10, 3, 4, 5]
+    case2 = [0, 3, 2, 5, 4, 6, 1, 1]
+    s = Solution()
+    print(s.longestConsecutive(nums))
+    # Output: 4
+    print(s.longestConsecutive(case2))
+    # Output: 7
